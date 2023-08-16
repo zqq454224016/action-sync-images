@@ -35,10 +35,14 @@ jobs:
     - name: Use Skopeo Tools Sync Image to Docker Hub
       run: |
         #!/usr/bin/env bash
-        skopeo copy --all docker://registry.k8s.io/kube-apiserver:v1.27.4 docker://docker.io/zq454224016/kube-apiserver:v1.27.4
-        skopeo copy --all docker://registry.k8s.io/kube-controller-manager:v1.27.4 docker://docker.io/zq454224016/kube-controller-manager:v1.27.4
-        skopeo copy --all docker://registry.k8s.io/kube-scheduler:v1.27.4 docker://docker.io/zq454224016/kube-scheduler:v1.27.4
-        skopeo copy --all docker://registry.k8s.io/kube-proxy:v1.27.4 docker://docker.io/zq454224016/kube-proxy:v1.27.4
-        skopeo copy --all docker://registry.k8s.io/pause:3.7 docker://docker.io/zq454224016/pause:3.7
-        skopeo copy --all docker://registry.k8s.io/etcd:3.5.6-0 docker://docker.io/zq454224016/etcd:3.5.6-0
-        skopeo copy --all docker://registry.k8s.io/coredns/coredns:v1.8.6 docker://docker.io/zq454224016/coredns:v1.8.6
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/controller:v0.44.4 docker://weiyigeek/tektoncd-pipeline-controller:v0.44.4
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/resolvers:v0.44.4 docker://weiyigeek/tektoncd-pipeline-resolvers:v0.44.4
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/webhook:v0.44.4 docker://weiyigeek/tektoncd-pipeline-webhook:v0.44.4
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.44.4 docker://weiyigeek/tektoncd-pipeline-git-init:v0.44.4
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/entrypoint:v0.44.4 docker://weiyigeek/tektoncd-pipeline-entrypoint:v0.44.4
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/nop:v0.44.4 docker://weiyigeek/tektoncd-pipeline-nop:v0.44.4
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/sidecarlogresults:v0.44.4 docker://weiyigeek/tektoncd-pipeline-sidecarlogresults:v0.44.4
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter:v0.44.4 docker://weiyigeek/tektoncd-pipeline-imagedigestexporter:v0.44.4
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init:v0.44.4 docker://weiyigeek/tektoncd-pipeline-pullrequest-init:v0.44.4
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/workingdirinit:v0.44.4 docker://weiyigeek/tektoncd-pipeline-workingdirinit:v0.44.4
+
